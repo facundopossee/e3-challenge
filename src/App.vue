@@ -18,6 +18,10 @@
         This website was developed for an E3 Ecommerce technical exam by
         <a href="https://facundoposse.vercel.app/">Facundo Posse</a>
       </h5>
+      <h5>
+        Clone the repository on
+        <a href="https://github.com/facundopossee/e3-challenge">Github</a>
+      </h5>
     </div>
   </div>
 </template>
