@@ -4,4 +4,4 @@ This project was developed for an E3 Ecommerce technical exam by [Facundo Posse]
 
 ## Tools
 
-Made with Vue.js and Deploy with Vercel
+Made with Vue.js and deploy with Vercel
