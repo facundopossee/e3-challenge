@@ -45,7 +45,8 @@ export default {
     },
   },
   watch: {
-    //METODO QUE SE ACCIONA CUANDO LA VARIABLE 'FRACTION' BINDEADA AL INPUT CAMBIA SU VALOR
+    //EN VUEJS, LAS FUNCIONES DEFINIDAS DENTRO DE 'WATCH' FUNCIONAN AL ESTILO DE EL TIPICO ONCHANGE()
+    //ES DECIR, SE EJECUTAN CUANDO LAS VARIABLES QUE LE DAN NOMBRE A CADA WATCH CAMBIA SU VALOR (fraction y name)
     fraction: function () {
       //al recibir la variable 'fraction', se comprueba que tenga el formato de una fraccion
       let a = /^[0-9]{1,}\/[0-9]{1,}$/.test(this.fraction);
@@ -56,11 +57,10 @@ export default {
         //en el caso de ser una fraccion, se envian tanto el numerador como el denominador al metodo 'gcd' escrito mas arriba (linea 42)
         let arr = this.fraction.split("/", 2);
         let div = this.gcd(arr[0], arr[1]);
-        //se simplifica la fraccion dividiendo ambas partes de la fraccion por el valor del metodo 'gcd' y se asigna a la variable 'fractionresult' para mostrarlo
+        //se simplifica la fraccion dividiendo cada parte de la fraccion por el valor devuelto por 'gcd' y se asigna a la variable 'fractionresult' para mostrarlo
         this.fractionresult = arr[0] / div + "/" + arr[1] / div;
       }
     },
-    //METODO QUE SE ACCIONA CUANDO LA VARIABLE 'NAME' BINDEADA AL INPUT CAMBIA SU VALOR
     name: function () {
       //se testea el string ingresado comparandolo con el regex definido para el caso
       let a = /^([A-Z][a-z]{2,}( [A-Z][a-z]{2,}( [A-Z][a-z]{2,})?| [A-Z]\.( [A-Z][a-z]{2,})?)|([A-Z]\.( [A-Z][a-z]{2,}))|[A-Z]\.( [A-Z]\.)( [A-Z][a-z]{2,}))$/.test(
